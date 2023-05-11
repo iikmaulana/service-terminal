@@ -17,9 +17,13 @@ func (ox gatewayHandler) HostCreateRequest(ctx *gin.Context) {
 	}
 
 	form := models.HostCreateRequest{
-		Name: ctx.PostForm("name"),
-		Url:  ctx.PostForm("url"),
-		Port: ctx.PostForm("port"),
+		Name:         ctx.PostForm("name"),
+		Url:          ctx.PostForm("url"),
+		Port:         ctx.PostForm("port"),
+		HostUsername: ctx.PostForm("host_username"),
+		HostPassword: ctx.PostForm("host_password"),
+		HostClientId: ctx.PostForm("host_client_id"),
+		HostType:     ctx.PostForm("host_type"),
 	}
 
 	tmpResult, err := ox.hostUsecase.HostCreateUsecase(form)
@@ -40,10 +44,14 @@ func (ox gatewayHandler) HostUpdateRequest(ctx *gin.Context) {
 	}
 
 	form := models.HostUpdateRequest{
-		Id:   ctx.PostForm("id"),
-		Name: ctx.PostForm("name"),
-		Url:  ctx.PostForm("url"),
-		Port: ctx.PostForm("port"),
+		Id:           ctx.PostForm("id"),
+		Name:         ctx.PostForm("name"),
+		Url:          ctx.PostForm("url"),
+		Port:         ctx.PostForm("port"),
+		HostUsername: ctx.PostForm("host_username"),
+		HostPassword: ctx.PostForm("host_password"),
+		HostClientId: ctx.PostForm("host_client_id"),
+		HostType:     ctx.PostForm("host_type"),
 	}
 
 	tmpResult, err := ox.hostUsecase.HostUpdateUsecase(form)

@@ -15,6 +15,10 @@ func NewHostUsageUsecase(hostRepo service.HostRepo) service.HostUsageUsecase {
 }
 
 func (u hostUsecase) HostCreateUsecase(form models.HostCreateRequest) (result string, serr serror.SError) {
+	if form.HostType == "" {
+		return result, serror.New("Host type tidak boleh kosong")
+	}
+
 	tmpResult, err := u.hostRepo.HostCreateRepo(form)
 	if err != nil {
 		return result, err
@@ -25,6 +29,9 @@ func (u hostUsecase) HostCreateUsecase(form models.HostCreateRequest) (result st
 }
 
 func (u hostUsecase) HostUpdateUsecase(form models.HostUpdateRequest) (result string, serr serror.SError) {
+	if form.HostType == "" {
+		return result, serror.New("Host type tidak boleh kosong")
+	}
 	tmpResult, err := u.hostRepo.HostUpdateRepo(form)
 	if err != nil {
 		return result, err
