@@ -8,6 +8,7 @@ type HostCreateRequest struct {
 	HostPassword string `json:"host_password"`
 	HostClientId string `json:"host_client_id"`
 	HostType     string `json:"host_type"`
+	Topic        string `json:"topic"`
 }
 
 type HostUpdateRequest struct {
@@ -19,6 +20,7 @@ type HostUpdateRequest struct {
 	HostPassword string `json:"host_password" db:"host_password"`
 	HostClientId string `json:"host_client_id" db:"host_client_id"`
 	HostType     string `json:"host_type" db:"host_type"`
+	Topic        string `json:"topic"`
 }
 
 type HostResult struct {
@@ -30,6 +32,7 @@ type HostResult struct {
 	HostPassword string `json:"host_password" db:"host_password"`
 	HostClientId string `json:"host_client_id" db:"host_client_id"`
 	HostType     string `json:"host_type" db:"host_type"`
+	Topic        string `json:"topic"`
 }
 
 type HostListResult struct {

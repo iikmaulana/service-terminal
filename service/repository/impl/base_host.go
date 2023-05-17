@@ -22,7 +22,7 @@ func NewHostRepository(db *sqlx.DB) service.HostRepo {
 }
 
 func (u hostRepository) HostCreateRepo(form models.HostCreateRequest) (result string, serr serror.SError) {
-	err := u.DB.QueryRow(query.QueryHostInsert, uuid.New().String(), form.Name, form.Url, form.Port, form.HostUsername, form.HostPassword, form.HostClientId, form.HostType).Scan(&result)
+	err := u.DB.QueryRow(query.QueryHostInsert, uuid.New().String(), form.Name, form.Url, form.Port, form.HostUsername, form.HostPassword, form.HostClientId, form.HostType, form.Topic).Scan(&result)
 	if err != nil {
 		return result, serror.New(err.Error())
 	}

@@ -24,6 +24,7 @@ func (ox gatewayHandler) HostCreateRequest(ctx *gin.Context) {
 		HostPassword: ctx.PostForm("host_password"),
 		HostClientId: ctx.PostForm("host_client_id"),
 		HostType:     ctx.PostForm("host_type"),
+		Topic:        ctx.PostForm("topic"),
 	}
 
 	tmpResult, err := ox.hostUsecase.HostCreateUsecase(form)
@@ -52,6 +53,7 @@ func (ox gatewayHandler) HostUpdateRequest(ctx *gin.Context) {
 		HostPassword: ctx.PostForm("host_password"),
 		HostClientId: ctx.PostForm("host_client_id"),
 		HostType:     ctx.PostForm("host_type"),
+		Topic:        ctx.PostForm("topic"),
 	}
 
 	tmpResult, err := ox.hostUsecase.HostUpdateUsecase(form)
