@@ -20,7 +20,7 @@ type HostUpdateRequest struct {
 	HostPassword string `json:"host_password" db:"host_password"`
 	HostClientId string `json:"host_client_id" db:"host_client_id"`
 	HostType     string `json:"host_type" db:"host_type"`
-	Topic        string `json:"topic"`
+	Topic        string `json:"topic" db:"topic"`
 }
 
 type HostResult struct {
@@ -32,7 +32,7 @@ type HostResult struct {
 	HostPassword string `json:"host_password" db:"host_password"`
 	HostClientId string `json:"host_client_id" db:"host_client_id"`
 	HostType     string `json:"host_type" db:"host_type"`
-	Topic        string `json:"topic"`
+	Topic        string `json:"topic" db:"topic"`
 }
 
 type HostListResult struct {
